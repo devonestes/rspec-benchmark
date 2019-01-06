@@ -8,3 +8,8 @@ desc 'Run all specs'
 task ci: %w[ coverage ]
 
 task default: :spec
+
+require 'testmetrics_rspec'
+task :testmetrics_parallel_rspec do
+  TestmetricsRspec::ParallelTests.run()
+end
